@@ -5,6 +5,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.List;
@@ -36,7 +37,10 @@ public class PokemonAdapter extends RecyclerView.Adapter<PokemonAdapter.MyViewHo
 
     @Override
     public void onBindViewHolder(MyViewHolder holder, final int position) {
+        holder.pImage.setImageResource(lista.get(position).avatar);
         holder.pName.setText(lista.get(position).name);
+        holder.pType.setText(lista.get(position).type);
+
         holder.pNumber.setText(lista.get(position).number+ " ");
     }
     @Override
@@ -48,10 +52,12 @@ public class PokemonAdapter extends RecyclerView.Adapter<PokemonAdapter.MyViewHo
 
         TextView pNumber;
         TextView pName;
-
+        ImageView pImage;
+        TextView pType;
         public MyViewHolder(View itemView) {
             super(itemView);
-
+            pImage = (ImageView) itemView.findViewById(R.id.poke_image);
+            pType = (TextView) itemView.findViewById(R.id.poke_type);
             pName = (TextView) itemView.findViewById(R.id.poke_name);
             pNumber = (TextView) itemView.findViewById(R.id.poke_number);
         }

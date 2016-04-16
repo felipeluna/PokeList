@@ -20,9 +20,9 @@ public class MainActivity extends AppCompatActivity {
 
 
         recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
-        Pokemon a = new Pokemon(1, 1, "Bulbasaur", "Grass");
-        Pokemon b = new Pokemon(2, 2, "Ivysaur", "Grass");
-        Pokemon c = new Pokemon(3, 3, "Venosaur", "Grass");
+        Pokemon a = new Pokemon(1, R.drawable.poke_001, "Bulbasaur", "Grass");
+        Pokemon b = new Pokemon(2, R.drawable.poke_002, "Ivysaur", "Grass");
+        Pokemon c = new Pokemon(3, R.drawable.poke_003, "Venosaur", "Grass");
 
         List<Pokemon>  lista = new ArrayList<>();
         lista.add(a);

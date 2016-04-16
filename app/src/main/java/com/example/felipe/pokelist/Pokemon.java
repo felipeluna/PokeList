@@ -9,6 +9,7 @@ public class Pokemon {
     String name;
     String type;
 
+
     public Pokemon(int number, int avatar, String name, String type){
         this.number = number;
         this.avatar = avatar;
