@@ -3,7 +3,6 @@ package com.example.felipe.pokelist.communication;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
-import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.IOException;
@@ -45,10 +44,8 @@ public class GetREST {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        JSONObject js = null;
-        Gson gs = new Gson();
-        Type listType = new TypeToken<ArrayList<Pokemon>>() {}.getType();
-        List<Pokemon> lista = new Gson().fromJson(jsonArray, listType);
-        return lista;
+        Type listType = new TypeToken<ArrayList<Pokemon>>() {
+        }.getType();
+        return new Gson().fromJson(jsonArray, listType);
     }
 }

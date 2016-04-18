@@ -43,11 +43,11 @@ public class PokemonAdapter extends RecyclerView.Adapter<PokemonAdapter.MyViewHo
     @Override
     public void onBindViewHolder(MyViewHolder holder, final int position) {
 //        holder.pImage.setImageResource(lista.get(position).avatar);
-        holder.pImage.setImageURI(Uri.parse(lista.get(position).getImg()));
+//        holder.pImage.setImageURI(Uri.parse(lista.get(position).getImg()));
         holder.pName.setText(lista.get(position).getName());
         holder.pType.setText(lista.get(position).getType());
 
-        holder.pNumber.setText(lista.get(position).getNumber()+ " ");
+        holder.pNumber.setText(lista.get(position).getNumber());
     }
     @Override
     public int getItemCount() {
@@ -58,11 +58,11 @@ public class PokemonAdapter extends RecyclerView.Adapter<PokemonAdapter.MyViewHo
 
         TextView pNumber;
         TextView pName;
-        ImageView pImage;
+//        ImageView pImage;
         TextView pType;
         public MyViewHolder(View itemView) {
             super(itemView);
-            pImage = (ImageView) itemView.findViewById(R.id.poke_image);
+//            pImage = (ImageView) itemView.findViewById(R.id.poke_image);
             pType = (TextView) itemView.findViewById(R.id.poke_type);
             pName = (TextView) itemView.findViewById(R.id.poke_name);
             pNumber = (TextView) itemView.findViewById(R.id.poke_number);
