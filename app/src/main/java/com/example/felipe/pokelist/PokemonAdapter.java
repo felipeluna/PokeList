@@ -1,12 +1,15 @@
 package com.example.felipe.pokelist;
 
 import android.content.Context;
+import android.net.Uri;
+import android.os.AsyncTask;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import com.example.felipe.pokelist.communication.Pokemon;
 
 import java.util.List;
 
@@ -26,6 +29,8 @@ public class PokemonAdapter extends RecyclerView.Adapter<PokemonAdapter.MyViewHo
         inflater = LayoutInflater.from(context);
     }
 
+
+
     @Override
     public MyViewHolder onCreateViewHolder(ViewGroup parent, int position) {
 
@@ -37,11 +42,12 @@ public class PokemonAdapter extends RecyclerView.Adapter<PokemonAdapter.MyViewHo
 
     @Override
     public void onBindViewHolder(MyViewHolder holder, final int position) {
-        holder.pImage.setImageResource(lista.get(position).avatar);
-        holder.pName.setText(lista.get(position).name);
-        holder.pType.setText(lista.get(position).type);
+//        holder.pImage.setImageResource(lista.get(position).avatar);
+        holder.pImage.setImageURI(Uri.parse(lista.get(position).getImg()));
+        holder.pName.setText(lista.get(position).getName());
+        holder.pType.setText(lista.get(position).getType());
 
-        holder.pNumber.setText(lista.get(position).number+ " ");
+        holder.pNumber.setText(lista.get(position).getNumber()+ " ");
     }
     @Override
     public int getItemCount() {
