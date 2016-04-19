@@ -25,37 +25,19 @@ public class MainActivity extends AppCompatActivity {
 
     private RecyclerView recyclerView;
     private PokemonAdapter pokemonAdapter;
-
     private PokeTask mPokemonTask = new PokeTask();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
-        List<Pokemon> preLista = new ArrayList<Pokemon>();
-        Pokemon test = new Pokemon();
-        test.setNumber("#1");
-        test.setName("Bulbasaur");
-        test.setType("grass");
-        /*"_id": "56a588c7fe89d12508801b5f",
-    "rowId": 1,
-    "number": "#1",
-    "img": "http://www.serebii.net/shuffle/pokemon/001.png",
-    "name": "Bulbasaur",
-    "type": "grass",
-    "basePower": "40",
-    "ability": "Power of 4",
-    "location": "Puerto Blanco - Stage 2",
-    "captureRate": "75%",
-    "__v": 0
-    */
 
         // list where the items will be loaded
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-
         mPokemonTask.execute();
-    }
 
+    }
 
     private class PokeTask extends AsyncTask<Void,Void , List<Pokemon>> {
 
@@ -78,7 +60,9 @@ public class MainActivity extends AppCompatActivity {
                 Log.d("Request", "response erro");
             }
 
-            Log.d("pokemon", "Response: " + response.body().toString());
+            if (response != null) {
+                Log.d("pokemon", "Response: " + response.body().toString());
+            }
             Type listType = new TypeToken<ArrayList<Pokemon>>() {
             }.getType();
             return new Gson().fromJson(json, listType);
