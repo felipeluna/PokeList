@@ -29,6 +29,16 @@ public class Pokemon {
     private String location;
     private String captureRate;
 
+    public String getLollipop() {
+        return lollipop;
+    }
+
+    public void setLollipop(String lollipop) {
+        this.lollipop = lollipop;
+    }
+
+    private String lollipop;
+
     public String getNumber() {
         return number;
     }

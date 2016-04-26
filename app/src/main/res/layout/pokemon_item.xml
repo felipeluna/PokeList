@@ -10,13 +10,18 @@
         android:layout_height="wrap_content">
         <TextView
             android:id="@+id/poke_number"
+            android:textSize="18dp"
+            android:layout_marginRight="10dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
+
         <TextView
             android:id="@+id/poke_name"
+            android:textSize="18dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
     </LinearLayout>
+
     <!-- left-->
     <LinearLayout
         android:orientation="horizontal"
@@ -26,23 +31,33 @@
         <!-- bottom left -->
         <LinearLayout
             android:orientation="vertical"
+            android:layout_marginTop="5dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
             <!-- type-->
-
-            <TextView
-                android:id="@+id/poke_type"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
             <ImageView
                 android:id="@+id/poke_image"
+                android:layout_marginRight="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/poke_lollipop"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
         </LinearLayout>
+
         <LinearLayout
             android:orientation="vertical"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/poke_type"
+                android:textSize="15dp"
+
+                android:textAllCaps="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
 
             <TextView
                 android:id="@+id/poke_ability"

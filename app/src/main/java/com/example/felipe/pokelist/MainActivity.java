@@ -6,17 +6,13 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
-
-import com.example.felipe.pokelist.communication.GetREST;
 import com.example.felipe.pokelist.communication.Pokemon;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
-
 import java.io.IOException;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
-
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
@@ -24,17 +20,15 @@ import okhttp3.Response;
 public class MainActivity extends AppCompatActivity {
 
     private RecyclerView recyclerView;
-    private PokemonAdapter pokemonAdapter;
     private PokeTask mPokemonTask = new PokeTask();
-
+    private PokemonAdapter pokemonAdapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
-
-        // list where the items will be loaded
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        // list where the items will be loaded
         mPokemonTask.execute();
 
     }
